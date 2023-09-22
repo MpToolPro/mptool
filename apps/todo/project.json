@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/todo/src",
-  "prefix": "mfe-netlify",
+  "prefix": "mptool",
   "targets": {
     "build": {
       "executor": "@nx/angular:webpack-browser",

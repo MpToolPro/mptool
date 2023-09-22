@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "mfe-netlify",
+            "prefix": "mptool",
             "style": "kebab-case"
           }
         ]

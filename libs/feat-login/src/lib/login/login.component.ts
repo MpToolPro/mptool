@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '@mfe-netlify/shared/auth';
+import { AuthService } from '@mptool/shared/auth';
 
 @Component({
-  selector: 'mfe-netlify-login',
+  selector: 'mptool-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })

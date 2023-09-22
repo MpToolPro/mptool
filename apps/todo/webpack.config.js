@@ -19,7 +19,7 @@ const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   tsConfigPath,
-  ['@mfe-netlify/shared/auth'],
+  ['@mptool/shared/auth'],
   workspaceRootPath
 );
 

@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { LolService } from '@mfe-netlify/shared/auth';
+import { LolService } from '@mptool/shared/auth';
 
 @Component({
-  selector: 'mfe-netlify-login-entry',
-  template: `
-  <div>{{lol.name$ | async}}</div>
-<button (click)="sendData()"> Send data to remote mfe</button>
+  selector: 'mptool-login-entry',
+  template: ` <div>{{ lol.name$ | async }}</div>
+    <button (click)="sendData()">Send data to remote mfe</button>
 
-  <mfe-netlify-login></mfe-netlify-login>`,
+    <mptool-login></mptool-login>`,
 })
 export class RemoteEntryComponent {
   constructor(public lol: LolService) {}

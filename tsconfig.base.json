@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mfe-netlify/feat-login": ["libs/feat-login/src/index.ts"],
-      "@mfe-netlify/shared/auth": ["libs/shared/auth/src/index.ts"],
+      "@mptool/feat-login": ["libs/feat-login/src/index.ts"],
+      "@mptool/shared/auth": ["libs/shared/auth/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

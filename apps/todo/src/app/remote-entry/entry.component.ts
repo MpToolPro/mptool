@@ -1,16 +1,15 @@
 import { Component } from '@angular/core';
-import { LolService } from '@mfe-netlify/shared/auth';
+import { LolService } from '@mptool/shared/auth';
 
 @Component({
-  selector: 'mfe-netlify-todo-entry',
+  selector: 'mptool-todo-entry',
   template: `<div class="todo-list">
-    <div>{{lol.name$ | async}}</div>
+    <div>{{ lol.name$ | async }}</div>
     <h1>Todo</h1>
     <div class="list">
       <label> <input type="checkbox" name="item" /> Item </label>
     </div>
-  </div> 
-  `,
+  </div> `,
 })
 export class RemoteEntryComponent {
   constructor(public lol: LolService) {}

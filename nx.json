@@ -1,5 +1,5 @@
 {
-  "npmScope": "mfe-netlify",
+  "npmScope": "mptool",
   "affected": {
     "defaultBase": "main"
   },
