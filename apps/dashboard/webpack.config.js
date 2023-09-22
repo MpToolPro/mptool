@@ -45,8 +45,8 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       remotes: {
-        todo: 'http://localhost:4201/remoteEntry.js',
-        login: 'http://localhost:4202/remoteEntry.js',
+        todo: 'https://inspiring-starship-933c53.netlify.app/',
+        login: 'https://tiny-kulfi-b37ea4.netlify.app/',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },
