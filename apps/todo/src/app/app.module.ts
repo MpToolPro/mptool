@@ -19,7 +19,6 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    TuiRootModule,
     FormsModule,
     TuiButtonModule,
     RouterModule.forRoot(
