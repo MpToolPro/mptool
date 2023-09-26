@@ -13,10 +13,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
 import { TUI_SANITIZER, TuiButtonModule, TuiRootModule } from '@taiga-ui/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,

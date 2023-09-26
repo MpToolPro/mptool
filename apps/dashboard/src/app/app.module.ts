@@ -7,10 +7,12 @@ import { RouterModule } from '@angular/router';
 import { AuthGuard } from '@mptool/shared/auth';
 import { TuiRootModule } from '@taiga-ui/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     TuiRootModule,
