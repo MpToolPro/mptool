@@ -15,6 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     TuiRootModule,
     ReactiveFormsModule,
     TuiScrollbarModule,
