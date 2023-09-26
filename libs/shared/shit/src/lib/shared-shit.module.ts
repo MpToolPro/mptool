@@ -3,6 +3,5 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [],
 })
-export class SharedAuthModule {}
+export class SharedShitModule {}

@@ -18,9 +18,16 @@
         "assets": [
           "apps/todo/src/favicon.ico",
           "apps/todo/src/assets",
-          "apps/todo/src/netlify.toml"
+          "apps/todo/src/netlify.toml",
+          {
+            "glob": "**/*",
+            "input": "node_modules/@taiga-ui/icons/src",
+            "output": "assets/taiga-ui/icons"
+          }
         ],
-        "styles": ["apps/todo/src/styles.scss"],
+        "styles": ["apps/todo/src/styles.scss", "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
+        "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
+        "node_modules/@taiga-ui/styles/taiga-ui-global.less"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/todo/webpack.config.js"

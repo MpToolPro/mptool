@@ -48,7 +48,11 @@ module.exports = {
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },
-        '@angular/common': { singleton: true, strictVersion: true },
+        '@angular/common': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: '16.2.6',
+        },
         '@angular/common/http': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
         ...sharedMappings.getDescriptors(),

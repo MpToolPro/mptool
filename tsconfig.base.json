@@ -9,14 +9,16 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2020",
-    "module": "esnext",
+    "module": "es2020",
     "lib": ["ES2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@mptool/feat-login": ["libs/feat-login/src/index.ts"],
+      "@mptool/polit": ["libs/polit/src/index.ts"],
       "@mptool/shared/auth": ["libs/shared/auth/src/index.ts"],
+      "@mptool/shared/shit": ["libs/shared/shit/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
