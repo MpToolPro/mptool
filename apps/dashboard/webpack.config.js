@@ -44,13 +44,17 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      remotes: [
-        ['todo', 'https://inspiring-starship-933c53.netlify.app/'],
-        ['login', 'https://tiny-kulfi-b37ea4.netlify.app/'],
-      ],
+      remotes: {
+        todo: 'https://inspiring-starship-933c53.netlify.app/',
+        login: 'https://tiny-kulfi-b37ea4.netlify.app/',
+      },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },
-        '@angular/common': { singleton: true, strictVersion: true },
+        '@angular/common': {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: '16.2.6',
+        },
         '@angular/common/http': { singleton: true, strictVersion: true },
         '@angular/router': { singleton: true, strictVersion: true },
         ...sharedMappings.getDescriptors(),
