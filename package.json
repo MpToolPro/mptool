@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "format": "prettier --write \"apps/**/*.{html,js,ts,css,scss}\" --ignore-path .prettierignore"
   },
   "private": true,
   "dependencies": {
