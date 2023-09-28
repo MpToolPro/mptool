@@ -13,8 +13,8 @@ import { LoginComponent } from 'libs/authorization/src/lib/login/login.component
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    CommonModule,
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     TuiRootModule,
     RouterModule.forRoot(

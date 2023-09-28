@@ -18,8 +18,8 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
-    CommonModule,
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     FormsModule,
     TuiButtonModule,
