@@ -25,4 +25,8 @@ export class LoginComponent {
       this.router.navigateByUrl('/');
     }
   }
+
+  public setToken() {
+    localStorage.setItem('token', 'testJWTtoken');
+  }
 }

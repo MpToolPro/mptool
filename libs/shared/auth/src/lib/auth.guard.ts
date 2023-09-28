@@ -1,26 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Router, UrlTree } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  Router,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
 import { map, tap, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard  {
+export class AuthGuard {
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate():
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    return this.authService.activeUser.pipe(
-      map((activeUser) => Boolean(activeUser)),
-      tap((isLoggedIn) => {
-        if (!isLoggedIn) {
-          this.router.navigateByUrl('login');
-        }
-      })
-    );
+  canActivate(): boolean {
+    if (localStorage.getItem('token')) {
+      return true;
+    } else {
+      this.router.navigate(['/login']);
+      return false;
+    }
+  }
+
+  canActivateChild(): boolean {
+    return this.canActivate();
   }
 }

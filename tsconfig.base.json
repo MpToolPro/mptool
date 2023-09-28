@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mptool/authorization": ["libs/authorization/src/index.ts"],
       "@mptool/feat-login": ["libs/feat-login/src/index.ts"],
       "@mptool/polit": ["libs/polit/src/index.ts"],
       "@mptool/shared/auth": ["libs/shared/auth/src/index.ts"],

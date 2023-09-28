@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '@mptool/shared/auth';
-import { TuiRootModule } from '@taiga-ui/core';
+import { TUI_SANITIZER, TuiRootModule } from '@taiga-ui/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
+import { LoginComponent } from 'libs/authorization/src/lib/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -31,11 +32,16 @@ import { CommonModule } from '@angular/common';
               loadChildren: () =>
                 import('todo/Module').then((m) => m.RemoteEntryModule),
               canActivate: [AuthGuard],
+              canActivateChild: [AuthGuard],
             },
             {
               path: 'login',
               loadChildren: () =>
                 import('login/Module').then((m) => m.RemoteEntryModule),
+            },
+            {
+              path: 'loginn',
+              component: LoginComponent,
             },
           ],
         },
@@ -43,7 +49,7 @@ import { CommonModule } from '@angular/common';
       { initialNavigation: 'enabledBlocking' }
     ),
   ],
-  providers: [],
+  providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
