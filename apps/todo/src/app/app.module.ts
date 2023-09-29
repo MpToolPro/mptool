@@ -6,6 +6,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { EventPluginsModule } from '@tinkoff/ng-event-plugins';
 import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
@@ -14,11 +15,14 @@ import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
 import { TUI_SANITIZER, TuiButtonModule, TuiRootModule } from '@taiga-ui/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    EventPluginsModule,
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,

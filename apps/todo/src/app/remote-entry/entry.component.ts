@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { LolService } from '@mptool/shared/auth';
 
 @Component({
   selector: 'mptool-todo-entry',
   template: `<div class="todo-list">
     <div>{{ lol.name$ | async }}</div>
+    <button (click)="sendData()">Send data to remote mfe</button>
     <h1>Todo</h1>
     <h2>хрень какая-то</h2>
     <mptool-politics></mptool-politics>
@@ -32,5 +34,12 @@ import { LolService } from '@mptool/shared/auth';
   </div> `,
 })
 export class RemoteEntryComponent {
-  constructor(public lol: LolService) {}
+  constructor(public lol: LolService, private http: HttpClient) {}
+  sendData(): void {
+    this.http.get('https://dummyjson.com/products/1').subscribe({
+      next: (res: any) => {
+        this.lol.addName(res.title);
+      },
+    });
+  }
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { LolService } from '@mptool/shared/auth';
 
@@ -11,8 +12,12 @@ import { LolService } from '@mptool/shared/auth';
   `,
 })
 export class RemoteEntryComponent {
-  constructor(public lol: LolService) {}
+  constructor(public lol: LolService, private http: HttpClient) {}
   sendData(): void {
-    this.lol.addName('залупа');
+    this.http.get('https://dummyjson.com/products/2').subscribe({
+      next: (res: any) => {
+        this.lol.addName(res.title);
+      },
+    });
   }
 }

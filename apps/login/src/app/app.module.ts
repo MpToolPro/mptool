@@ -12,12 +12,16 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EventPluginsModule } from '@tinkoff/ng-event-plugins';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
+    EventPluginsModule,
     CommonModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(
       [
