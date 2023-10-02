@@ -2,18 +2,46 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { AuthGuard, AuthInterceptor } from '@mptool/shared/auth';
-import { TUI_SANITIZER, TuiRootModule } from '@taiga-ui/core';
+import { AuthInterceptor } from '@mptool/shared/auth';
+import {
+  TUI_SANITIZER,
+  TuiButtonModule,
+  TuiErrorModule,
+  TuiRootModule,
+  TuiScrollbarModule,
+  TuiSvgModule,
+  TuiTextfieldControllerModule,
+} from '@taiga-ui/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
 import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
-import { LoginComponent } from 'libs/authorization/src/lib/login/login.component';
 import { EventPluginsModule } from '@tinkoff/ng-event-plugins';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  TuiCheckboxModule,
+  TuiFieldErrorPipeModule,
+  TuiInputModule,
+  TuiInputPasswordModule,
+  TuiInputPhoneModule,
+} from '@taiga-ui/kit';
+import { TuiForAsyncModule } from '@taiga-ui/cdk';
+import { LoginComponent } from './login/login.component';
+import { PoliticsComponent } from './politics/politics.component';
+import { RestoreComponent } from './restore/restore.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
+registerLocaleData(localeRu);
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    PoliticsComponent,
+    RestoreComponent,
+    SignUpComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -21,37 +49,21 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     CommonModule,
     BrowserAnimationsModule,
     TuiRootModule,
-    RouterModule.forRoot(
-      [
-        {
-          path: '',
-          children: [
-            {
-              path: '',
-              redirectTo: '/todo',
-              pathMatch: 'full',
-            },
-            {
-              path: 'todo',
-              loadChildren: () =>
-                import('todo/Module').then((m) => m.RemoteEntryModule),
-              canActivate: [AuthGuard],
-              canActivateChild: [AuthGuard],
-            },
-            {
-              path: 'login',
-              loadChildren: () =>
-                import('login/Module').then((m) => m.RemoteEntryModule),
-            },
-            {
-              path: 'loginn',
-              component: LoginComponent,
-            },
-          ],
-        },
-      ],
-      { initialNavigation: 'enabledBlocking' }
-    ),
+    AppRoutingModule,
+    TuiErrorModule,
+    TuiInputModule,
+    ReactiveFormsModule,
+    FormsModule,
+    TuiFieldErrorPipeModule,
+    TuiForAsyncModule,
+    TuiInputPasswordModule,
+    TuiButtonModule,
+    TuiSvgModule,
+    TuiErrorModule,
+    TuiTextfieldControllerModule,
+    TuiCheckboxModule,
+    TuiScrollbarModule,
+    TuiInputPhoneModule,
   ],
   providers: [
     { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer },

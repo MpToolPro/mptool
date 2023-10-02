@@ -9,6 +9,7 @@ import { LolService } from '@mptool/shared/auth';
     <button (click)="sendData()">Send data to remote mfe</button>
     <h1>Todo</h1>
     <h2>хрень какая-то</h2>
+    <img src="../../assets/sbp.png" alt="" />
     <mptool-politics></mptool-politics>
     <tui-root>
       <button

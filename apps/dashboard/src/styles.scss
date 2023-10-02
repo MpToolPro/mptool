@@ -1,4 +1,20 @@
+$main_bg: '#fff';
+
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  src: local('Roboto'),
+    url('./fonts/Roboto-Regular.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'),
+    url('./fonts/Montserrat-Regular.ttf') format(truetype);
+}
+
 :root {
   --tui-primary: #389893;
 
