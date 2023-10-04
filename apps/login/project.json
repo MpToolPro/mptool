@@ -25,9 +25,9 @@
             "output": "assets/taiga-ui/icons"
           }
         ],
-        "styles": ["apps/login/src/styles.scss", "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
+        "styles": ["node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
         "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
-        "node_modules/@taiga-ui/styles/taiga-ui-global.less"],
+        "node_modules/@taiga-ui/styles/taiga-ui-global.less", "apps/login/src/styles.scss"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/login/webpack.config.js"

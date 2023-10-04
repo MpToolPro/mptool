@@ -16,27 +16,27 @@ $main_bg: '#fff';
 }
 
 :root {
-  --tui-primary: #389893;
+  --tui-primary: #389893 !important;
 
-  --tui-primary-hover: #2e8061;
+  --tui-primary-hover: #2e8061 !important;
 
-  --tui-error-fill: #e12067;
-  --tui-negative: #e12067;
-  --tui-disabled-opacity: 0.66;
-  --tui-text-01: #333;
+  --tui-error-fill: #e12067 !important;
+  --tui-negative: #e12067 !important;
+  --tui-disabled-opacity: 0.66 !important;
+  --tui-text-01: #333 !important;
   --tui-heading-font: 'Montserrat', 'Manrope', -apple-system,
     'BlinkMacSystemFont', system-ui, 'Roboto', 'Segoe UI', 'Helvetica Neue',
-    sans-serif;
+    sans-serif !important;
   --tui-text-font: 'Montserrat', 'Manrope', -apple-system, 'BlinkMacSystemFont',
-    system-ui, 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
-  --tui-secondary: rgb(56 201 149 / 20%);
-  --tui-link: #2e8061;
+    system-ui, 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif !important;
+  --tui-secondary: rgb(56 201 149 / 20%) !important;
+  --tui-link: #2e8061 !important;
 
-  --tui-success-fill: #2e8061;
+  --tui-success-fill: #2e8061 !important;
 }
 
 body {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat' !important;
   margin: 0;
   height: max-content;
   color: #333333;

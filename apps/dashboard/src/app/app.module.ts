@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AuthInterceptor } from '@mptool/shared/auth';
+import { AuthInterceptor } from '@mptool/shared/core';
 import {
   TUI_SANITIZER,
   TuiButtonModule,

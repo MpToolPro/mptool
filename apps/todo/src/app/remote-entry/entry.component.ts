@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LolService } from '@mptool/shared/auth';
+import { LolService } from '@mptool/shared/core';
 
 @Component({
   selector: 'mptool-todo-entry',
@@ -10,7 +10,6 @@ import { LolService } from '@mptool/shared/auth';
     <h1>Todo</h1>
     <h2>хрень какая-то</h2>
     <img src="../../assets/sbp.png" alt="" />
-    <mptool-politics></mptool-politics>
     <tui-root>
       <button
         appearance="primary"

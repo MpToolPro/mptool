@@ -3,14 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { RemoteEntryComponent } from './entry.component';
-import { PolitModule } from '@mptool/polit';
 import { TUI_SANITIZER, TuiButtonModule, TuiRootModule } from '@taiga-ui/core';
 import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
 
 @NgModule({
   declarations: [RemoteEntryComponent],
   imports: [
-    PolitModule,
     CommonModule,
     TuiRootModule,
     TuiButtonModule,
@@ -18,6 +16,14 @@ import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
       {
         path: '',
         component: RemoteEntryComponent,
+      },
+      {
+        path: 'foo',
+        loadChildren: () => import('./foo/foo.module').then((m) => m.FooModule),
+      },
+      {
+        path: 'bar',
+        loadChildren: () => import('./bar/bar.module').then((m) => m.BarModule),
       },
     ]),
   ],

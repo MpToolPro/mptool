@@ -1,1 +1,128 @@
-<p>sign-up works!</p>
+<div class="tui-container">
+  <div class="tui-row sign-up-box mobile-flex-container" *ngIf="loginForm">
+    <div class="tui-col_6">
+      <div class="mobile-vis logo-mini">
+        <img class="logo-mini" src="../../assets/LogoCab.svg" />
+      </div>
+
+      <form [formGroup]="loginForm">
+        <h3 class="tui-form__header tui-form__header_margin-top_none">
+          Регистрация
+        </h3>
+        <div class="tui-form__row">
+          <tui-input
+            tuiTextfieldExampleText="Field placeholder"
+            formControlName="emailValue"
+          >
+            E-mail
+            <span class="tui-required"></span>
+          </tui-input>
+          <tui-error
+            formControlName="emailValue"
+            [error]="[] | tuiFieldError | async"
+          ></tui-error>
+
+          <tui-input-phone
+            style="margin-bottom: 1rem"
+            class="b-form"
+            formControlName="phoneValue"
+          >
+            Телефон
+          </tui-input-phone>
+          <tui-input class="account-input" formControlName="telegramValue">
+            Telegram
+            <input tuiTextfield type="text" />
+          </tui-input>
+        </div>
+        <div class="tui-form__row">
+          <tui-input-password
+            [tuiTextfieldCustomContent]="loginForm.valid ? success : ''"
+            formControlName="passwordValue"
+          >
+            Введите пароль
+          </tui-input-password>
+        </div>
+        <div class="tui-form__row">
+          <tui-input-password
+            [tuiTextfieldCustomContent]="loginForm.valid ? success : ''"
+            formControlName="passwordConfirmValue"
+          >
+            Повторите пароль
+          </tui-input-password>
+        </div>
+        <span *ngIf="!validateForMinLength" style="color: red">
+          Длинна пароля должна быть минимум 8 символов!
+        </span>
+        <span *ngIf="validateForSame" style="color: red">
+          Пароли не совпадают!
+        </span>
+        <div class="politics">
+          <div
+            class="terms_of_use"
+            (click)="navigate.goPolitics()"
+            style="color: #333"
+          >
+            Пользовательское соглашение
+          </div>
+          <div class="checkbox1">
+            <tui-checkbox
+              formControlName="termsOfUse"
+              class="agree"
+            ></tui-checkbox>
+            &nbsp; Я прочитал(а) пользовательское соглашение и соглашаюсь с
+            &nbsp; &nbsp; условиями.
+          </div>
+          <div class="checkbox2">
+            <tui-checkbox
+              formControlName="privacyPolicy"
+              class="agree2"
+            ></tui-checkbox>
+            &nbsp; Я соглашаюсь с политикой конфиденциальности.
+          </div>
+        </div>
+        <div class="tui-form__buttons">
+          <button
+            (click)="register()"
+            [disabled]="
+              !loginForm.valid || !validatePrivacyPolicy || !validateTermsOfUse
+            "
+            tuiButton
+            size="l"
+            type="submit"
+            class="tui-form__button"
+          >
+            Регистрация
+          </button>
+        </div>
+      </form>
+      <p>
+        Уже зарегистрированы? Тогда
+        <u (click)="navigate.goLogin()">войдите</u>
+      </p>
+    </div>
+
+    <div class="tui-col_6 mobile-hide">
+      <div>
+        <img src="../../assets/LogoCab.svg" />
+      </div>
+      <div>
+        <h2 style="margin-top: 20px">Сервис продвижения на маркетплейсах</h2>
+
+        <p>
+          Уважаемые пользователи! Мы предлагаем вам попробовать наш сервис
+          совершенно бесплатно. После привязки вашего аккаунта к мессенджеру
+          Telegram вы получаете от нас 500 рублей для тестирования функций
+          нашего сервиса!
+        </p>
+        <p>
+          Регистрируйтесь, привязывайте ваш телеграм аккаунт и получайте 500
+          рублей на счет!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #success>
+  <tui-svg src="tuiIconCheckLarge" class="success tui-space_left-3"></tui-svg>
+</ng-template>

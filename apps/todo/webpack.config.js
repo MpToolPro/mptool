@@ -19,7 +19,7 @@ const workspaceRootPath = path.join(__dirname, '../../');
 const sharedMappings = new mf.SharedMappings();
 sharedMappings.register(
   tsConfigPath,
-  ['@mptool/shared/auth'],
+  ['@mptool/shared/core'],
   workspaceRootPath
 );
 

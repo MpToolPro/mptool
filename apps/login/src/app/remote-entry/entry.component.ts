@@ -1,14 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { LolService } from '@mptool/shared/auth';
+import { LolService } from '@mptool/shared/core';
 
 @Component({
   selector: 'mptool-login-entry',
   template: `
     <div>{{ lol.name$ | async }}</div>
     <button (click)="sendData()">Send data to remote mfe</button>
-    <mptool-politics></mptool-politics>
-    <mptool-login></mptool-login>
   `,
 })
 export class RemoteEntryComponent {

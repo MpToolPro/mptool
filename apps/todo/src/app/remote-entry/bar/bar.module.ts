@@ -2,21 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { RemoteEntryComponent } from './entry.component';
-import { FeatLoginModule } from '@mptool/feat-login';
+import { BarComponent } from './bar.component';
 
 @NgModule({
-  declarations: [RemoteEntryComponent],
+  declarations: [BarComponent],
   imports: [
-    FeatLoginModule,
     CommonModule,
     RouterModule.forChild([
       {
         path: '',
-        component: RemoteEntryComponent,
+        component: BarComponent,
       },
     ]),
   ],
   providers: [],
 })
-export class RemoteEntryModule {}
+export class BarModule {}

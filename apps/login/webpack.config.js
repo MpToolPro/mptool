@@ -21,7 +21,7 @@ sharedMappings.register(
   tsConfigPath,
   [
     /* mapped paths to share */
-    '@mptool/shared/auth',
+    '@mptool/shared/core',
   ],
   workspaceRootPath
 );

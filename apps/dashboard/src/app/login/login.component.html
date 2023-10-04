@@ -6,7 +6,7 @@
       </div>
 
       <form [formGroup]="loginForm">
-        <h3 class="tui-form__header tui-form__header_margin-top_none" style="font-family: 'Montserrat'">
+        <h3 class="tui-form__header tui-form__header_margin-top_none">
           Авторизация
         </h3>
         <div class="tui-form__row">
@@ -47,11 +47,11 @@
       <br />
       <p>
         Нет учётной записи? Тогда
-        <!-- <u (click)="appService.goSignup()">зарегистрируйтесь</u> -->
+        <u (click)="navigate.goSignup()">зарегистрируйтесь</u>
       </p>
       <p>
         Забыли пароль?
-        <!-- <u (click)="appService.goRestore()">Восстановить пароль</u> -->
+        <u (click)="navigate.goRestore()">Восстановить пароль</u>
       </p>
     </div>
 

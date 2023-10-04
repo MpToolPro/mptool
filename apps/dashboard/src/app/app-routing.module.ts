@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@mptool/shared/auth';
+import { AuthGuard } from '@mptool/shared/core';
 import { LoginComponent } from './login/login.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { SignUpComponent } from './sign-up/sign-up.component';

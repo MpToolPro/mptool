@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NavigateEndpointService } from '../utils/navigate-endpoint.service';
 
 @Component({
   selector: 'mptool-loginnn',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  constructor() {}
+  constructor(public navigate: NavigateEndpointService) {}
 
   loginForm = new FormGroup({
     emailValue: new FormControl('', [
