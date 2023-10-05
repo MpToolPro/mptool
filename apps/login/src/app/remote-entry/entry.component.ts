@@ -7,6 +7,7 @@ import { LolService } from '@mptool/shared/core';
   template: `
     <div>{{ lol.name$ | async }}</div>
     <button (click)="sendData()">Send data to remote mfe</button>
+    <mptool-login></mptool-login>
   `,
 })
 export class RemoteEntryComponent {

@@ -7,6 +7,12 @@ import { Router } from '@angular/router';
 export class NavigateEndpointService {
   constructor(private router: Router) {}
 
+  get isMobile() {
+    let isMobile: boolean;
+    document.body.clientWidth > 768 ? (isMobile = false) : (isMobile = true);
+    return isMobile;
+  }
+
   goLogin() {
     this.router.navigate(['/loginn']);
   }

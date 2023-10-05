@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { AuthInterceptor } from '@mptool/shared/core';
+import { AuthInterceptor, ErrorInterceptor } from '@mptool/shared/core';
 import {
   TUI_SANITIZER,
+  TuiAlertModule,
+  TuiAlertService,
   TuiButtonModule,
   TuiErrorModule,
   TuiRootModule,
@@ -32,6 +34,7 @@ import { LoginComponent } from './login/login.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { RestoreComponent } from './restore/restore.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ErInterceptor } from './er.interceptor';
 
 registerLocaleData(localeRu);
 @NgModule({
@@ -63,14 +66,21 @@ registerLocaleData(localeRu);
     TuiTextfieldControllerModule,
     TuiCheckboxModule,
     TuiScrollbarModule,
+    TuiAlertModule,
     TuiInputPhoneModule,
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErInterceptor, multi: true },
     { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
+    },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    {
+      provide: LOCALE_ID,
+      useValue: 'ru',
     },
   ],
   bootstrap: [AppComponent],

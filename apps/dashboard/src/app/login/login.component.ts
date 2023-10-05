@@ -1,14 +1,27 @@
-import { Component } from '@angular/core';
+import { AfterContentInit, Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavigateEndpointService } from '../utils/navigate-endpoint.service';
+import { TuiAlertService, TuiNotificationT } from '@taiga-ui/core';
 
 @Component({
   selector: 'mptool-loginnn',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
-  constructor(public navigate: NavigateEndpointService) {}
+export class LoginComponent implements AfterContentInit {
+  constructor(
+    public navigate: NavigateEndpointService,
+    private readonly alertService: TuiAlertService
+  ) {}
+
+  ngAfterContentInit(): void {
+    this.alertService.open('На счету недостаточно средств', {
+      label: 'Ошибка!',
+      status: 'error' as TuiNotificationT,
+    });
+    console.log('додаоо');
+    console.log(this.alertService);
+  }
 
   loginForm = new FormGroup({
     emailValue: new FormControl('', [
