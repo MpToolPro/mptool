@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { NavigateEndpointService } from './utils/navigate-endpoint.service';
-import { TuiDialogService } from '@taiga-ui/core';
+import { TuiAlertService, TuiDialogService } from '@taiga-ui/core';
 
 @Component({
   selector: 'mptool-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'dashboard';
   constructor(
     private navigate: NavigateEndpointService,
-    private dialogService: TuiDialogService
+    @Inject(TuiAlertService) private alertService: TuiAlertService
   ) {}
   ngOnInit(): void {
     console.log(this.navigate.isMobile);
-    this.dialogService.open('Хуйня').subscribe();
   }
 }

@@ -11,16 +11,16 @@ import { TuiAlertService, TuiNotificationT } from '@taiga-ui/core';
 export class LoginComponent implements AfterContentInit {
   constructor(
     public navigate: NavigateEndpointService,
-    private readonly alertService: TuiAlertService
+    @Inject(TuiAlertService) private alertService: TuiAlertService
   ) {}
 
   ngAfterContentInit(): void {
-    this.alertService.open('На счету недостаточно средств', {
-      label: 'Ошибка!',
-      status: 'error' as TuiNotificationT,
-    });
-    console.log('додаоо');
-    console.log(this.alertService);
+    this.alertService
+      .open('На счету недостаточно средств', {
+        label: 'Ошибка!',
+        status: 'error' as TuiNotificationT,
+      })
+      .subscribe();
   }
 
   loginForm = new FormGroup({

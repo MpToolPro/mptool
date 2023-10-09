@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TuiAlertService } from '@taiga-ui/core';
 
 @Component({
   selector: 'mptool-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo';
+  constructor(private alert: TuiAlertService) {
+    this.alert.open('Хуй').subscribe();
+  }
 }

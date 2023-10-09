@@ -8,6 +8,7 @@ import {
   TuiAlertModule,
   TuiAlertService,
   TuiButtonModule,
+  TuiDialogModule,
   TuiErrorModule,
   TuiRootModule,
   TuiScrollbarModule,
@@ -56,6 +57,7 @@ registerLocaleData(localeRu);
     TuiErrorModule,
     TuiInputModule,
     ReactiveFormsModule,
+    TuiDialogModule,
     FormsModule,
     TuiFieldErrorPipeModule,
     TuiForAsyncModule,
@@ -70,8 +72,8 @@ registerLocaleData(localeRu);
     TuiInputPhoneModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ErInterceptor, multi: true },
     { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer },
+    { provide: HTTP_INTERCEPTORS, useClass: ErInterceptor, multi: true },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
