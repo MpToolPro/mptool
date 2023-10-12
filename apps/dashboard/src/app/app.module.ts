@@ -10,6 +10,7 @@ import {
   TuiButtonModule,
   TuiDialogModule,
   TuiErrorModule,
+  TuiLinkModule,
   TuiRootModule,
   TuiScrollbarModule,
   TuiSvgModule,
@@ -36,6 +37,7 @@ import { PoliticsComponent } from './politics/politics.component';
 import { RestoreComponent } from './restore/restore.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ErInterceptor } from './er.interceptor';
+import { HomePageComponent } from './homepage/homepage.component';
 
 registerLocaleData(localeRu);
 @NgModule({
@@ -45,6 +47,7 @@ registerLocaleData(localeRu);
     PoliticsComponent,
     RestoreComponent,
     SignUpComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ registerLocaleData(localeRu);
     TuiForAsyncModule,
     TuiInputPasswordModule,
     TuiButtonModule,
+    TuiLinkModule,
     TuiSvgModule,
     TuiErrorModule,
     TuiTextfieldControllerModule,

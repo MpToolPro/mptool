@@ -110,7 +110,7 @@
     "serve-mfe": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["nx serve login", "nx serve todo", "nx serve dashboard"]
+        "commands": ["nx serve login", "nx serve todo", "nx serve dashboard", "nx serve wildberries", "nx serve ozon", "nx serve avito"]
       }
     }
   },

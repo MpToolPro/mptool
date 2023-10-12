@@ -24,13 +24,12 @@ export class ErInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    this.alertService
-      .open('На счету недостаточно средств', {
-        label: 'Ошибка!',
-        status: 'error' as TuiNotificationT,
-      })
-      .subscribe();
-    console.log('er');
+    // this.alertService
+    //   .open('На счету недостаточно средств', {
+    //     label: 'Ошибка!',
+    //     status: 'error' as TuiNotificationT,
+    //   })
+    //   .subscribe();
     return next.handle(request);
   }
 }

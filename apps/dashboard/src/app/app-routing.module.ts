@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { PoliticsComponent } from './politics/politics.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { RestoreComponent } from './restore/restore.component';
+import { HomePageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/todo',
+        component: HomePageComponent,
         pathMatch: 'full',
       },
       {
@@ -22,6 +23,27 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         canActivateChild: [AuthGuard],
       },
+      {
+        path: 'wildberries',
+        loadChildren: () =>
+          import('wildberries/Module').then((m) => m.RemoteEntryModule),
+        canActivate: [AuthGuard],
+        canActivateChild: [AuthGuard],
+      },
+      // {
+      //   path: 'ozon',
+      //   loadChildren: () =>
+      //     import('ozon/Module').then((m) => m.RemoteEntryModule),
+      //   canActivate: [AuthGuard],
+      //   canActivateChild: [AuthGuard],
+      // },
+      // {
+      //   path: 'avito',
+      //   loadChildren: () =>
+      //     import('avito/Module').then((m) => m.RemoteEntryModule),
+      //   canActivate: [AuthGuard],
+      //   canActivateChild: [AuthGuard],
+      // },
       {
         path: 'login',
         loadChildren: () =>

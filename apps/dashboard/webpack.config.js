@@ -47,6 +47,10 @@ module.exports = {
       remotes: {
         todo: 'https://inspiring-starship-933c53.netlify.app/remoteEntry.js',
         login: 'https://ephemeral-tarsier-23f392.netlify.app/remoteEntry.js',
+        wildberries:
+          'https://astonishing-sopapillas-caaf47.netlify.app/remoteEntry.js',
+        avito: 'https://lustrous-creponne-a9c4e4.netlify.app/remoteEntry.js',
+        ozon: 'https://lucent-unicorn-8a7733.netlify.app/remoteEntry.js',
       },
       shared: {
         '@angular/core': { singleton: true, strictVersion: true },

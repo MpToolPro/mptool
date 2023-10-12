@@ -18,7 +18,7 @@ import { PolymorpheusComponent } from '@tinkoff/ng-polymorpheus';
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
   constructor(
-    private readonly alertService: TuiAlertService,
+    private alertService: TuiAlertService,
     @Inject(TuiDialogService) private readonly dialogService: TuiDialogService,
     @Inject(Injector) private readonly injector: Injector
   ) {}
@@ -27,6 +27,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    console.log('ктоо');
     this.alertService
       .open('На счету недостаточно средств', {
         label: 'Ошибка!',

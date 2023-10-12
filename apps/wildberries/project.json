@@ -1,0 +1,110 @@
+{
+  "name": "wildberries",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/wildberries/src",
+  "prefix": "mptool",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/wildberries",
+        "index": "apps/wildberries/src/index.html",
+        "main": "apps/wildberries/src/main.ts",
+        "polyfills": "apps/wildberries/src/polyfills.ts",
+        "tsConfig": "apps/wildberries/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/wildberries/src/favicon.ico",
+          "apps/wildberries/src/assets",
+          "apps/wildberries/src/netlify.toml",
+          {
+            "glob": "**/*",
+            "input": "node_modules/@taiga-ui/icons/src",
+            "output": "assets/taiga-ui/icons"
+          }
+        ],
+        "styles": ["node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
+        "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
+        "node_modules/@taiga-ui/styles/taiga-ui-global.less", "apps/wildberries/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/wildberries/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/wildberries/src/environments/environment.ts",
+              "with": "apps/wildberries/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/wildberries/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:webpack-dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "wildberries:build:production"
+        },
+        "development": {
+          "browserTarget": "wildberries:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4203,
+        "publicHost": "http://localhost:4203"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "wildberries:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/wildberries/src/**/*.ts", "apps/wildberries/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/wildberries"],
+      "options": {
+        "jestConfig": "apps/wildberries/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
